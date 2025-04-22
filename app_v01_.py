@@ -43,7 +43,7 @@ st.set_page_config(
 
 with st.sidebar:
     st.title('Relatório Parcial \n SAEB 2025  \n Escola Estadual Helena Dionysio')
-    df = pd.read_csv("Dados_Planilha_9A/Dados_simples_simulados.csv", sep=";")
+    df = pd.read_csv("Dados_simples_simulados.csv", sep=";")
 
     with st.sidebar:
         salas_distintas = df["Componente"].unique().tolist()
