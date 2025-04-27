@@ -49,7 +49,7 @@ with st.sidebar:
         salas_distintas = df["Componente"].unique().tolist()
         #salas_selecionadas = st.selectbox("Componente", ["Matematica", "Portugues"])
 
-        componente_selecionada = st.selectbox("Componente", ["Matematica", "Portugues"])
+        componente_selecionada = st.selectbox("Componente", ["Matemática", "Portugues"])
 
         #if componente_selecionada:
         #    df = df[df["Turma"] == salas_selecionadas]
