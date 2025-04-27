@@ -63,7 +63,7 @@ with st.sidebar:
 if componente_selecionada == "Matematica"  == "9A":
     df['Porcentagem Simulado 1'] = (df['Sim1'] / 10) * 100
     df['Porcentagem Simulado 2'] = (df['Sim2'] / 10) * 100
-    df['Porcentagem Simulado 3'] = (df['Sim3'] / 12) * 100
+    df['Porcentagem Simulado 3'] = (df['Sim3'] / 10) * 100
     df['Porcentagem Simulado 4'] = (df['Sim4'] / 15) * 100
     df['Porcentagem Simulado 5'] = (df['Sim5'] / 18) * 100
     df['Porcentagem Simulado 6'] = (df['Sim6'] / 18) * 100
