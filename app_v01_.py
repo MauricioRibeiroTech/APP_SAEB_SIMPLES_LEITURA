@@ -141,7 +141,7 @@ len_df_fil_5 = len(df[df['Porcentagem Simulado 5'] >= 60])
 len_df_fil_6 = len(df[df['Porcentagem Simulado 6'] >= 60])
 len_df_fil_7 = len(df[df['Porcentagem Simulado 7'] >= 60])
 len_df_fil_8 = len(df[df['Porcentagem Simulado 8'] >= 60])
-len_df_fil_8 = len(df[df['Porcentagem Simulado 9'] >= 60])
+len_df_fil_9 = len(df[df['Porcentagem Simulado 9'] >= 60])
 grafico_num_alunos = {'Simulados': ['Simulado 1', 'Simulado 2', 'Simulado 3', 'Simulado 4', 'Simulado 5', 'Simulado 6', 'Simulado 7', 'Simulado 8', 'Simulado 9'],
                       'Numero de Alunos': [len_df_fil_1, len_df_fil_2, len_df_fil_3, len_df_fil_4, len_df_fil_5, len_df_fil_6, len_df_fil_7, len_df_fil_8, len_df_fil_9]}
 
