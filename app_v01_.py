@@ -43,7 +43,7 @@ st.set_page_config(
 
 with st.sidebar:
     st.title('Relatório Parcial \n SAEB 2025  \n Escola Estadual Helena Dionysio')
-    df = pd.read_csv("Dados_simples_simulados.csv", sep=";")
+    df = pd.read_csv("Dados_simples_simulados.csv", sep=",")
 
     with st.sidebar:
         salas_distintas = df["Componente"].unique().tolist()
@@ -69,6 +69,7 @@ if componente_selecionada == "Matematica"  == "9A":
     df['Porcentagem Simulado 6'] = (df['Sim6'] / 18) * 100
     df['Porcentagem Simulado 7'] = (df['Sim7'] / 20) * 100
     df['Porcentagem Simulado 8'] = (df['Sim8'] / 16) * 100
+    df['Porcentagem Simulado 9'] = (df['Sim9'] / 26) * 100
 
 
 elif componente_selecionada == "Portugues" == "9A":
@@ -81,6 +82,7 @@ elif componente_selecionada == "Portugues" == "9A":
     df['Porcentagem Simulado 6'] = (df['Sim6'] / 18) * 100
     df['Porcentagem Simulado 7'] = (df['Sim7'] / 14) * 100
     df['Porcentagem Simulado 8'] = (df['Sim8'] / 16) * 100
+    df['Porcentagem Simulado 9'] = (df['Sim9'] / 26) * 100
 else:
     Numero_questoes = 10
     df['Porcentagem Simulado 1'] = (df['Sim1'] / 10) * 100
@@ -91,9 +93,10 @@ else:
     df['Porcentagem Simulado 6'] = (df['Sim6'] / 18) * 100
     df['Porcentagem Simulado 7'] = (df['Sim7'] / 20) * 100
     df['Porcentagem Simulado 8'] = (df['Sim8'] / 16) * 100
+    df['Porcentagem Simulado 9'] = (df['Sim9'] / 26) * 100
 
 SIM = ['Porcentagem Simulado 1', 'Porcentagem Simulado 2', 'Porcentagem Simulado 3', 'Porcentagem Simulado 4',
-           'Porcentagem Simulado 5', 'Porcentagem Simulado 6', 'Porcentagem Simulado 7', 'Porcentagem Simulado 8']
+           'Porcentagem Simulado 5', 'Porcentagem Simulado 6', 'Porcentagem Simulado 7', 'Porcentagem Simulado 8', 'Porcentagem Simulado 9']
 
 st.header("Relatório de notas de " + str(componente_selecionada))
 
@@ -112,6 +115,7 @@ b.metric("Simulado 5", df['Porcentagem Simulado 5'].mean().round(2), border=True
 b.metric("Simulado 6", df['Porcentagem Simulado 6'].mean().round(2), border=True)
 c.metric("Simulado 7", df['Porcentagem Simulado 7'].mean().round(2), border=True)
 c.metric("Simulado 8", df['Porcentagem Simulado 8'].mean().round(2), border=True)
+c.metric("Simulado 9", df['Porcentagem Simulado 9'].mean().round(2), border=True)
 
     # st.markdown("## Média de Notas Acertos:")
     # a, b, c = st.columns(3)
@@ -121,10 +125,10 @@ c.metric("Simulado 8", df['Porcentagem Simulado 8'].mean().round(2), border=True
     # c.metric("Simulado 3", df['Sim3'].mean().round(2), border=True)
     # a.metric("Simulado 4", df['Sim4'].mean().round(2), border=True)
 
-grafico_per = {'Simulados': ['Simulado 1', 'Simulado 2', 'Simulado 3', 'Simulado 4', 'Simulado 5', 'Simulado 6', 'Simulado 7', 'Simulado 8'],'Porcentagens': [df['Porcentagem Simulado 1'].mean().round(2), df['Porcentagem Simulado 2'].mean().round(2),
+grafico_per = {'Simulados': ['Simulado 1', 'Simulado 2', 'Simulado 3', 'Simulado 4', 'Simulado 5', 'Simulado 6', 'Simulado 7', 'Simulado 8', 'Simulado 9'],'Porcentagens': [df['Porcentagem Simulado 1'].mean().round(2), df['Porcentagem Simulado 2'].mean().round(2),
                                                                                                                                                               df['Porcentagem Simulado 3'].mean().round(2), df['Porcentagem Simulado 4'].mean().round(2),
                                                                                                                                                               df['Porcentagem Simulado 5'].mean().round(2), df['Porcentagem Simulado 6'].mean().round(2),
-                                                                                                                                                              df['Porcentagem Simulado 7'].mean().round(2), df['Porcentagem Simulado 8'].mean().round(2)]}
+                                                                                                                                                              df['Porcentagem Simulado 7'].mean().round(2), df['Porcentagem Simulado 8'].mean().round(2), df['Porcentagem Simulado 9'].mean().round(2)]}
 
 st.markdown("## Gráfico de Porcentagem Média")
 st.bar_chart(grafico_per, x='Simulados', y='Porcentagens', stack=False)
@@ -137,8 +141,9 @@ len_df_fil_5 = len(df[df['Porcentagem Simulado 5'] >= 60])
 len_df_fil_6 = len(df[df['Porcentagem Simulado 6'] >= 60])
 len_df_fil_7 = len(df[df['Porcentagem Simulado 7'] >= 60])
 len_df_fil_8 = len(df[df['Porcentagem Simulado 8'] >= 60])
-grafico_num_alunos = {'Simulados': ['Simulado 1', 'Simulado 2', 'Simulado 3', 'Simulado 4', 'Simulado 5', 'Simulado 6', 'Simulado 7', 'Simulado 8'],
-                      'Numero de Alunos': [len_df_fil_1, len_df_fil_2, len_df_fil_3, len_df_fil_4, len_df_fil_5, len_df_fil_6, len_df_fil_7, len_df_fil_8]}
+len_df_fil_8 = len(df[df['Porcentagem Simulado 9'] >= 60])
+grafico_num_alunos = {'Simulados': ['Simulado 1', 'Simulado 2', 'Simulado 3', 'Simulado 4', 'Simulado 5', 'Simulado 6', 'Simulado 7', 'Simulado 8', 'Simulado 9'],
+                      'Numero de Alunos': [len_df_fil_1, len_df_fil_2, len_df_fil_3, len_df_fil_4, len_df_fil_5, len_df_fil_6, len_df_fil_7, len_df_fil_8, len_df_fil_9]}
 
 st.markdown("## Número de alunos acima de 60%")
 st.bar_chart(grafico_num_alunos, x='Simulados', y='Numero de Alunos', stack=False)
@@ -174,6 +179,10 @@ st.table(df_filtrado_1[["Aluno", "Porcentagem Simulado 7"]].sort_values("Porcent
 st.markdown("### Oitavo Simulado")
 df_filtrado_1 = df[df['Porcentagem Simulado 8'] >= 60]
 st.table(df_filtrado_1[["Aluno", "Porcentagem Simulado 8"]].sort_values("Porcentagem Simulado 8", ascending=False).round(2))
+
+st.markdown("### Nono Simulado")
+df_filtrado_1 = df[df['Porcentagem Simulado 9'] >= 60]
+st.table(df_filtrado_1[["Aluno", "Porcentagem Simulado 9"]].sort_values("Porcentagem Simulado 9", ascending=False).round(2))
 
 
 
