@@ -59,6 +59,8 @@ with st.sidebar:
 
         if componente_selecionada == "Matemática":
             st.markdown("Professor responsável: Mauricio A. Ribeiro")
+       elif componente_selecionada == "Portugues":
+            st.markdown("Professor responsável: Mikela")
 
         st.markdown("Desenvolvido por Mauricio A. Ribeiro")
         st.markdown("EMAIL: mau.ap.ribeiro@gmail.com")
