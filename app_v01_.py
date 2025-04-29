@@ -57,6 +57,9 @@ with st.sidebar:
         if componente_selecionada:
             df = df[df["Componente"] == componente_selecionada]
 
+        if df[df["Componente"] == componente_selecionada]=  ["Matemática"]:
+            st.markdown("Professor responsável: Mauricio A. Ribeiro")
+
         st.markdown("Desenvolvido por Mauricio A. Ribeiro")
         st.markdown("EMAIL: mau.ap.ribeiro@gmail.com")
 
