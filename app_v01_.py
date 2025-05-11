@@ -49,7 +49,7 @@ with st.sidebar:
         salas_distintas = df["Componente"].unique().tolist()
         #salas_selecionadas = st.selectbox("Componente", ["Matematica", "Portugues"])
 
-        componente_selecionada = st.selectbox("Componente", ["Matemática", "Portugues"])
+        componente_selecionada = st.selectbox("Componente", ["Matemática", "Português"])
 
         #if componente_selecionada:
         #    df = df[df["Turma"] == salas_selecionadas]
@@ -59,7 +59,7 @@ with st.sidebar:
 
         if componente_selecionada == "Matemática":
             st.markdown("Professor responsável: Mauricio A. Ribeiro")
-        elif componente_selecionada == "Portugues":
+        elif componente_selecionada == "Português":
             st.markdown("Professor responsável: Mikela")
 
         st.markdown("Desenvolvido por Mauricio A. Ribeiro")
