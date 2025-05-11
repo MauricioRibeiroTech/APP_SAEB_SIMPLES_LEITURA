@@ -65,7 +65,7 @@ with st.sidebar:
         st.markdown("Desenvolvido por Mauricio A. Ribeiro")
         st.markdown("EMAIL: mau.ap.ribeiro@gmail.com")
 
-if componente_selecionada == "Matematica"  == "9A":
+if componente_selecionada == "Matemática"  == "9A":
     df['Porcentagem Simulado 1'] = (df['Sim1'] / 10) * 100
     df['Porcentagem Simulado 2'] = (df['Sim2'] / 10) * 100
     df['Porcentagem Simulado 3'] = (df['Sim3'] / 10) * 100
@@ -77,7 +77,7 @@ if componente_selecionada == "Matematica"  == "9A":
     df['Porcentagem Simulado 9'] = (df['Sim9'] / 26) * 100
 
 
-elif componente_selecionada == "Portugues" == "9A":
+elif componente_selecionada == "Português" == "9A":
     Numero_questoes = 10
     df['Porcentagem Simulado 1'] = (df['Sim1'] / Numero_questoes) * 100
     df['Porcentagem Simulado 2'] = (df['Sim2'] / Numero_questoes) * 100
